@@ -32,10 +32,10 @@ function gotPoses(results)
     {
         console.log(results);
         leftWristX = results[0].pose.leftWrist.x;
-        leftWristX = results[0].pose.leftWrist.y;
+        leftWristY = results[0].pose.leftWrist.y;
         console.log("x coordinate of left wrist" + leftWristX + "y coordinate of left wrist" + leftWristY);
         rightWristX = results[0].pose.rightWrist.x;
-        rightWristX = results[0].pose.rightWrist.y;
+        rightWristY = results[0].pose.rightWrist.y;
         console.log("x coordinate of right wrist" + rightWristX + "y coordinate of right wrist" + rightWristY);
     }
 }
