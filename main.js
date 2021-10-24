@@ -43,6 +43,9 @@ function gotPoses(results)
 function draw()
 {
     image(video, 0, 0, 600, 500);
+    fill("#f26100");
+    stroke("#f26100");
+    circle(leftWristX, leftWristY, 20);
 }
 
 function play()
