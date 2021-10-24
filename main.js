@@ -46,6 +46,11 @@ function draw()
     fill("#f26100");
     stroke("#f26100");
     circle(leftWristX, leftWristY, 20);
+    in_number_leftWristY = Number(leftWristY);
+    remove_decimals = floor(in_number_leftWristY);
+    volume = remove_decimals/500;
+    document.getElementById("volume").innerHTML = "Volume = " + volume;
+    song.setVolume();
 }
 
 function play()
