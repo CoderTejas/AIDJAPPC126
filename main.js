@@ -1,5 +1,6 @@
 song = "";
 scoreLeftWrist = 0;
+scoreRightWrist = 0;
 leftWristX = 0;
 leftWristY = 0;
 rightWristX = 0;
