@@ -35,6 +35,8 @@ function gotPoses(results)
         console.log(results);
         scoreLeftWrist = results[0].pose.keypoints[9].score;
         console.log("Score left Wrist = " + scoreLeftWrist);
+        scoreRightWrist = results[0].pose.keypoints[10].score;
+        console.log("Score right Wrist = " + scoreRightWrist);
         leftWristX = results[0].pose.leftWrist.x;
         leftWristY = results[0].pose.leftWrist.y;
         console.log("x coordinate of left wrist" + leftWristX + "y coordinate of left wrist" + leftWristY);
@@ -49,11 +51,14 @@ function draw()
     image(video, 0, 0, 600, 500);
     fill("#f26100");
     stroke("#f26100");
-    circle(rightWristX, rightWristY, 20);
 
-    if(rightWristY>0 && rightWristY<=100)
+    if(scoreRightWrist>0.2)
     {
-        document.getElementById("speed").innerHTML = "Speed = 0.5x";
+        circle(rightWristX, rightWristY, 20);
+
+        if(rightWristY>0 && rightWristY<=100)
+        {
+            document.getElementById("speed").innerHTML = "Speed = 0.5x";
         song.rate(0.5);
     }
     else if(rightWristY>100 && right<=200)
@@ -76,6 +81,7 @@ function draw()
         document.getElementById("speed").innerHTML = "Speed = 2.5x";
         song.rate(2.5);
     }
+}
 
     if(scoreLeftWrist>0.2)
     {
